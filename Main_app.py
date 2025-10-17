@@ -30,7 +30,7 @@ class DeployRequest(BaseModel):
     nonce: str
     brief: str
     checks: List[str]
-    evaluation_url = os.getenv("evaluation_url", "http://localhost:8001/notify")
+    evaluation_url: ClassVar[str] = "http://localhost:8001/notify"
 # Models
     attachments: Optional[List[Attachment]] = []
 
