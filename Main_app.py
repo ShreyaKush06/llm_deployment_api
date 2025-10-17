@@ -43,7 +43,18 @@ class DeployResponse(BaseModel):
 # Utility Functions
 def verify_secret(secret: str) -> bool:
     return secret == STUDENT_SECRET
-
+@app.get("/")
+async def root():
+    return {
+        "message": "LLM Code Deployment API",
+        "status": "running",
+        "endpoints": {
+            "health": "/health",
+            "deploy": "/deploy (POST)",
+            "docs": "/docs"
+        },
+        "student": "24f30035289@ds.study.iitm.ac.in"
+    }
 def call_aipipe_api(prompt: str) -> str:
     """Call aipipe API to generate code"""
     headers = {
