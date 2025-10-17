@@ -12,7 +12,7 @@ import uuid
 app = FastAPI()
 
 # Configuration
-AIPIPE_API_KEY = "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IjI0ZjMwMDM1MjlAZHMuc3R1ZHkuaWl0bS5hYy5pbiJ9.2UULPxOKpcLBQAnaounQId8ihlKB2TFAT-rrrKCcQiw"
+AIPIPE_API_KEY = os.getenv("AIPIPE_API_KEY", "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IjI0ZjMwMDM1MjlAZHMuc3R1ZHkuaWl0bS5hYy5pbiJ9.2UULPxOKpcLBQAnaounQId8ihlKB2TFAT-rrrKCcQiw")
 AIPIPE_API_URL = "https://aipipe.org/openai/v1/chat/completions"
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN", "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")
 GITHUB_USERNAME = os.getenv("GITHUB_USERNAME", "Shreyakush06")
